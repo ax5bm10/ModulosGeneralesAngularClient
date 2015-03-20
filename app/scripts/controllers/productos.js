@@ -8,10 +8,8 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('ProductosCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ProductosCtrl', function ($scope, productos) {
+    productos.get(function (response) {
+      $scope.productos = response.results;
+    });
   });

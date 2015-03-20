@@ -9,7 +9,6 @@
  */
 angular.module('modulosGeneralesApp')
   .controller('ClientesCtrl', function ($scope, clientes) {
-
     clientes.get(function (response) {
       $scope.clientes = response.results;
     });

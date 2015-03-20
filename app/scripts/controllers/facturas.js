@@ -8,10 +8,9 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('FacturasCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('FacturasCtrl', function ($scope, facturas) {
+
+    facturas.get(function (response) {
+      $scope.facturas = response.results;
+    });
   });
