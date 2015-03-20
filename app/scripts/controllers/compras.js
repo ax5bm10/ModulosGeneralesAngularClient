@@ -8,10 +8,13 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('ComprasCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ComprasCtrl', function ($scope, compras, detalleCompra) {
+
+    compras.get(function (response) {
+      $scope.compras = response.results;
+    });
+
+    detalleCompra.get(function (response) {
+      $scope.detalleCompra = response.results;
+    });
   });

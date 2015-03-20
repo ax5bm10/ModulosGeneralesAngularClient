@@ -8,10 +8,9 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('ClientesCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ClientesCtrl', function ($scope, clientes) {
+
+    clientes.get(function (response) {
+      $scope.clientes = response.results;
+    });
   });
