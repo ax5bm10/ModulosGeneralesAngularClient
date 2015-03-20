@@ -34,6 +34,26 @@ angular
         templateUrl: 'views/proveedores.html',
         controller: 'ProveedoresCtrl'
       })
+      .when('/compras',{
+        templateUrl: 'views/compras.html',
+        controller: 'ComprasCtrl'
+      })
+      .when('/servicios',{
+        templateUrl: 'views/servicios.html',
+        controller: 'ServiciosCtrl'
+      })
+      .when('/productos',{
+        templateUrl: 'views/productos.html',
+        controller: 'ProductosCtrl'
+      })
+      .when('/ventas',{
+        templateUrl: 'views/ventas.html',
+        controller: 'VentasCtrl'
+      })
+      .when('/facturas',{
+        templateUrl: 'views/facturas.html',
+        controller: 'FacturasCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'

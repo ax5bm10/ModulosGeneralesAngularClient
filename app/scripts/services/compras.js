@@ -8,16 +8,9 @@
  * Factory in the modulosGeneralesApp.
  */
 angular.module('modulosGeneralesApp')
-  .factory('compras', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
+  .factory('compras', function ($resource) {
+    return $resource('http://localhost:8000/api/compra');
+  })
+  .factory('detalle-compra', function($resource){
+    return $resource('http://localhost:8000/api/detalle-compra');
   });
