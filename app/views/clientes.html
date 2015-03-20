@@ -1,0 +1,19 @@
+<div>
+  <section>
+    <md-subheader class="md-primary">Clientes</md-subheader>
+    <md-list layout="column">
+      <md-item layout="row">
+        <h3 flex>Nombre</h3>
+        <h3 flex>Apellido</h3>
+        <h3 flex>CI</h3>
+        <h3 flex>Ruc</h3>
+      </md-item>
+      <md-item ng-repeat="cliente in clientes" layout="row">
+        <p flex>{{cliente.nombre}}</p>
+        <p flex>{{cliente.apellido}}</p>
+        <p flex>{{cliente.ci}}</p>
+        <p flex>{{cliente.ruc}}</p>
+      </md-item>
+    </md-list>
+  </section>
+</div>

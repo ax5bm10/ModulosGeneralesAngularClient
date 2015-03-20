@@ -20,18 +20,19 @@ angular
     'ngTouch',
     'ngMaterial',
   ])
-  .config(['$resourceProvider',function($resourceProvider){
-    $resourceProvider.defaults.stripTrailingSlashes = false;
-  }])
-  .config(function($httpProvider){
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    delete $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'];
-  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/clientes',{
+        templateUrl: 'views/clientes.html',
+        controller: 'ClientesCtrl'
+      })
+      .when('/proveedores',{
+        templateUrl: 'views/proveedores.html',
+        controller: 'ProveedoresCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
