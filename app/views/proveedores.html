@@ -1,2 +1,25 @@
-<p>This is the proveedores view.</p>
-{{proveedores}}
+<md-content layout-margin>
+  <h3>Proveedores</h3>
+  <md-content layout-margin class="md-whiteframe-z1" layout-padding>
+    <table class="hoverable">
+      <thead>
+      <tr>
+        <th data-field="Nombre">Nombre</th>
+        <th data-field="Ruc">RUC</th>
+        <th data-field="Telefono">Telefono</th>
+        <th data-field="Celular">Celular</th>
+        <th data-field="Mail">Mail</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="proveedor in proveedores" >
+      <tr ng-click="cargar(proveedor)">
+        <td>{{proveedor.nombre}}</td>
+        <td>{{proveedor.ruc}}</td>
+        <td>{{proveedor.telefono}}</td>
+        <td>{{proveedor.celular}}</td>
+        <td>{{proveedor.mail}}itune</td>
+      </tr>
+      </tbody>
+    </table>
+  </md-content>
+</md-content>

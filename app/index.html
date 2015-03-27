@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,11 +23,14 @@
 
     <!-- Add your site or application content here -->
     <md-toolbar class="titulo-toolbar">
-      <h2>Modulos Generales</h2>
+      <h2 class="md-toolbar-tools">
+        <span>Modulos Generales</span>
+      </h2>
     </md-toolbar>
 
     <div layout="row" flex>
       <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left md-whiteframe-z2">
+        <br>
         <md-button ng-href="#/home">Home</md-button>
         <md-button ng-href="#/clientes">Clientes</md-button>
         <md-button ng-href="#/proveedores">Proveedores</md-button>
@@ -38,6 +42,7 @@
       </md-sidenav>
 
       <md-content class="content" flex>
+        <br>
         <div ng-view=""></div>
       </md-content>
     </div>
@@ -72,6 +77,9 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 

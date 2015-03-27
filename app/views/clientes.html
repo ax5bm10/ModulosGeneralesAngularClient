@@ -1,19 +1,78 @@
-<div>
-  <section>
-    <md-subheader class="md-primary">Clientes</md-subheader>
-    <md-list layout="column">
-      <md-item layout="row">
-        <h3 flex>Nombre</h3>
-        <h3 flex>Apellido</h3>
-        <h3 flex>CI</h3>
-        <h3 flex>Ruc</h3>
-      </md-item>
-      <md-item ng-repeat="cliente in clientes" layout="row">
-        <p flex>{{cliente.nombre}}</p>
-        <p flex>{{cliente.apellido}}</p>
-        <p flex>{{cliente.ci}}</p>
-        <p flex>{{cliente.ruc}}</p>
-      </md-item>
-    </md-list>
-  </section>
-</div>
+<md-content layout-margin layout-padding>
+  <h3>Clientes</h3>
+  <md-content layout="row" layout-margin class="md-whiteframe-z1">
+
+    <td>
+      <md-input-container flex>
+        <label>Nombre</label>
+        <input ng-model="newCliente.nombre" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>Apellido</label>
+        <input ng-model="newCliente.apellido" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>CI</label>
+        <input ng-model="newCliente.ci" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>RUC</label>
+        <input ng-model="newCliente.ruc" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>Telefono</label>
+        <input ng-model="newCliente.telefono" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>Celular</label>
+        <input ng-model="newCliente.celular" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container flex>
+        <label>mail</label>
+        <input ng-model="newCliente.mail" placeholder="Placeholder text">
+      </md-input-container>
+    </td>
+  </md-content>
+
+  <md-content layout-margin class="md-whiteframe-z1" layout-padding>
+    <table class="hoverable">
+      <thead>
+        <tr>
+          <th data-field="nombre">Nombre</th>
+          <th data-field="apellido">Apellido</th>
+          <th data-field="ci">CI</th>
+          <th data-field="Ruc">RUC</th>
+          <th data-field="Telefono">Telefono</th>
+          <th data-field="Celular">Celular</th>
+          <th data-field="Mail">Mail</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="cliente in clientes" >
+        <tr ng-click="cargar(cliente)">
+          <td>{{cliente.nombre}}</td>
+          <td>{{cliente.apellido}}</td>
+          <td>{{cliente.ci}}</td>
+          <td>{{cliente.ruc}}</td>
+          <td>{{cliente.telefono}}</td>
+          <td>{{cliente.celular}}</td>
+          <td>{{cliente.mail}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </md-content>
+
+</md-content>
+
+

@@ -10,7 +10,5 @@
 angular.module('modulosGeneralesApp')
   .factory('compras', function ($resource) {
     return $resource('http://localhost:8000/api/compra');
-  })
-  .factory('detalleCompra', function($resource){
-    return $resource('http://localhost:8000/api/detalle-compra');
   });
+

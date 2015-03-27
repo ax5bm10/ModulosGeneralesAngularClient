@@ -12,4 +12,8 @@ angular.module('modulosGeneralesApp')
     clientes.get(function (response) {
       $scope.clientes = response.results;
     });
+
+    $scope.cargar = function (client) {
+      $scope.newCliente = client;
+    };
   });

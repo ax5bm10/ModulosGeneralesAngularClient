@@ -1,3 +1,19 @@
-<p>This is the compras view.</p>
-{{compras}}
-{{detalleCompra}}
+<md-content>
+  <h3>Compras</h3>
+  <table class="hoverable">
+    <thead>
+      <tr>
+        <th data-field="Proveedor">Proveedor</th>
+        <th data-field="Comprobante">Nro. Comprobante</th>
+        <th data-field="Fecha">Fecha_Compra</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="compra in compras">
+      <tr ng-click="showAdvanced($event,compra)">
+        <td>{{compra.proveedor.nombre}}</td>
+        <td>{{compra.nro_comprobante}}</td>
+        <td>{{compra.fecha_compra|date:"dd-MM-yyyy"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-content>
