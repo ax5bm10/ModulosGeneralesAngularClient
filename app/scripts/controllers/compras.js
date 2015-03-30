@@ -9,8 +9,8 @@
  */
 
 
-function DialogController($scope, $mdDialog, cmp) {
-  console.log(cmp);
+/*function DialogController($scope, $mdDialog, cmp) {
+  console.log('entre en el controlodar del dialogo');
   $scope.compra = cmp;
   $scope.hide = function() {
     $mdDialog.hide();
@@ -21,11 +21,10 @@ function DialogController($scope, $mdDialog, cmp) {
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };
-}
-
+}*/
 
 angular.module('modulosGeneralesApp')
-  .controller('ComprasCtrl', function ($scope, compras, $mdDialog) {
+  .controller('ComprasCtrl',['$scope','compras','$mdDialog', function ($scope, compras, $mdDialog) {
 
     compras.get(function (response) {
       $scope.compras = response.results;
@@ -34,7 +33,19 @@ angular.module('modulosGeneralesApp')
     $scope.showAdvanced = function(ev,compra) {
       console.log('hola');
       $mdDialog.show({
-        controller: DialogController,
+        controller: ['$scope','$mdDialog','cmp', function ($scope, $mdDialog, cmp) {
+          console.log('entre en el controlodar del dialogo');
+          $scope.compra = cmp;
+          $scope.hide = function() {
+            $mdDialog.hide();
+          };
+          $scope.cancel = function() {
+            $mdDialog.cancel();
+          };
+          $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+          };
+        }],
         templateUrl: 'views/dialogs/dialog1.html',
         targetEvent: ev,
         locals: {cmp: compra},
@@ -46,5 +57,5 @@ angular.module('modulosGeneralesApp')
           $scope.alert = 'You cancelled the dialog.';
         });
     };
-  });
+  }]);
 

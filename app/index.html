@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Modulos Generales </title>
     <meta name="description" content="">
     <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -22,14 +22,17 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <md-toolbar class="titulo-toolbar">
-      <h2 class="md-toolbar-tools">
+    <md-toolbar class="titulo-toolbar" layout="row" ng-controller="indexCtrl" >
+      <md-button hide-gt-md ng-click="toggleLeft()">
+        <i class="mdi-navigation-menu"></i>
+      </md-button>
+      <h2 class="md-toolbar-tools" >
         <span>Modulos Generales</span>
       </h2>
     </md-toolbar>
 
     <div layout="row" flex>
-      <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left md-whiteframe-z2">
+      <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left md-whiteframe-z2" layout="column">
         <br>
         <md-button ng-href="#/home">Home</md-button>
         <md-button ng-href="#/clientes">Clientes</md-button>
@@ -104,5 +107,14 @@
         <script src="scripts/services/ventas.js"></script>
         <script src="scripts/services/facturas.js"></script>
         <!-- endbuild -->
+        <script type="application/javascript">
+          'use strict';
+          angular.module('modulosGeneralesApp')
+            .controller('indexCtrl', function ($scope, $mdSidenav) {
+              $scope.toggleLeft = function() {
+                $mdSidenav('left').toggle();
+              };
+            });
+        </script>
 </body>
 </html>
