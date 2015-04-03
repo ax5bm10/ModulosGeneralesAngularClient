@@ -41,5 +41,11 @@
     "test": "grunt test",
     "start": "nodewebkit"
   },
-  "main":"dist/index.html"
+  "main":"dist/index.html",
+  "window":{
+    "tittle":"Modulos Generales",
+    "toolbar": false,
+    "width": 800,
+    "heigth": 600
+  }
 }

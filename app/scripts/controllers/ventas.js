@@ -8,7 +8,7 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('VentasCtrl', function ($scope, ventas, detalleVenta) {
+  .controller('VentasCtrl', ['$scope', 'ventas', 'detalleVenta', function ($scope, ventas, detalleVenta) {
 
     ventas.get(function (response) {
       $scope.ventas = response.results;
@@ -17,4 +17,4 @@ angular.module('modulosGeneralesApp')
     detalleVenta.get(function (response) {
       $scope.detalleVenta = response.results;
     });
-  });
+  }]);

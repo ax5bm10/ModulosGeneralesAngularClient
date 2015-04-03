@@ -8,9 +8,9 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('FacturasCtrl', function ($scope, facturas) {
+  .controller('FacturasCtrl',['$scope', 'facturas', function ($scope, facturas) {
 
     facturas.get(function (response) {
       $scope.facturas = response.results;
     });
-  });
+  }]);

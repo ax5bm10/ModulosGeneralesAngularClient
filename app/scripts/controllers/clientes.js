@@ -8,23 +8,9 @@
  * Controller of the modulosGeneralesApp
  */
 
-function DialogoClienteCtrl ($scope, $mdDialog, client) {
-    $scope.newCliente = client;
-    $scope.hide = function () {
-      $mdDialog.hide();
-    };
-    $scope.cancel = function () {
-      $mdDialog.cancel();
-    };
-    $scope.answer = function (answer) {
-      $mdDialog.hide(answer);
-    };
-  }
-
-
 
 angular.module('modulosGeneralesApp')
-  .controller('ClientesCtrl', function ($scope, clientes, $mdDialog) {
+  .controller('ClientesCtrl',['$scope','clientes','$mdDialog', function ($scope, clientes, $mdDialog) {
     clientes.get(function (response) {
       $scope.clientes = response.results;
     });
@@ -34,9 +20,20 @@ angular.module('modulosGeneralesApp')
     };*/
 
     $scope.cargar = function(ev,cliente) {
-      console.log('hola');
       $mdDialog.show({
-        controller: DialogoClienteCtrl,
+        controller: ['$scope','$mdDialog', 'client' ,function ($scope, $mdDialog, client) {
+          console.log(client);
+          $scope.newCliente = client;
+          $scope.hide = function () {
+            $mdDialog.hide();
+          };
+          $scope.cancel = function () {
+            $mdDialog.cancel();
+          };
+          $scope.answer = function (answer) {
+            $mdDialog.hide(answer);
+          };
+        }],
         templateUrl: 'views/dialogs/dialogo_cliente.html',
         targetEvent: ev,
         locals: {client: cliente},
@@ -48,5 +45,5 @@ angular.module('modulosGeneralesApp')
           $scope.alert = 'You cancelled the dialog.';
         });
     };
-  });
+  }]);
 

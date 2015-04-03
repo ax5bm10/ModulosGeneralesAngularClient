@@ -8,8 +8,8 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('ProveedoresCtrl', function ($scope, proveedores) {
+  .controller('ProveedoresCtrl',['$scope', 'proveedores', function ($scope, proveedores) {
     proveedores.get(function (response) {
       $scope.proveedores = response.results;
     });
-  });
+  }]);
