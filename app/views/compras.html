@@ -1,5 +1,12 @@
-<md-content>
+<md-content layout-margin layout-padding>
+
   <h3>Compras</h3>
+
+  <md-input-container >
+    <label>Buscar</label>
+    <input ng-model="searchText" placeholder="">
+  </md-input-container>
+
   <table class="hoverable">
     <thead>
       <tr>
@@ -16,4 +23,5 @@
       </tr>
     </tbody>
   </table>
+
 </md-content>

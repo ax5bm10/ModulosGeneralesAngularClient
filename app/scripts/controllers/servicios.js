@@ -8,12 +8,12 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('ServiciosCtrl', ['$scope', 'servicio','servicios', function ($scope, servicio, servicios) {
+  .controller('ServiciosCtrl', ['$scope', 'servicio','detalleServicio', function ($scope, servicio, detalleServicio) {
     servicio.get(function (response) {
       $scope.servicio = response.results;
     });
 
-    servicios.get(function (response) {
-      $scope.servicios = response.results;
+    detalleServicio.get(function (response) {
+      $scope.detalleServicio = response.results;
     });
   }]);

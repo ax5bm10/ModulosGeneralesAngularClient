@@ -8,6 +8,6 @@
  * Controller of the modulosGeneralesApp
  */
 angular.module('modulosGeneralesApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', [function () {
 
-  });
+  }]);
